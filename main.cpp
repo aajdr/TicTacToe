@@ -2,7 +2,7 @@
 
 char board[3][3] = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
 
-void printBoard()
+void printBoard()//print the board
 {
   for(int i=0; i<3; i++)
   {
@@ -19,6 +19,8 @@ int main()
 {
   int turn = 0;
   bool gameOver = false;
+  int rowIn;
+  int colIn;
 
   std::cout << "welcome to tic tac toe!" << std::endl;
 
@@ -35,6 +37,19 @@ int main()
     }
 
     //do the turn
+    std::cout << "Pick a Row: ";
+    std::cin >> rowIn;
+    std::cout << "Pick a Collumn: ";
+    std::cin >> colIn;
+
+    if(turn==0)
+    {
+      board[rowIn][colIn] = 'X';
+    }
+    else
+    {
+      board[rowIn][colIn] = 'O';
+    }
 
 
     turn++;
