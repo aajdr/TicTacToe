@@ -4,7 +4,18 @@
 class Game
 {
 public:
-  char board[3][3] = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
+  char board[3][3];
+
+  Game()//sets all squares to nothing
+  {
+    for(int i=0; i<3; i++)
+    {
+      for(int j=0; j<3; j++)
+      {
+        board[j][i] = ' ';
+      }
+    }
+  }
 
   void printBoard()//print the board
   {
@@ -32,20 +43,31 @@ public:
 
   }
 
-  void makeMove(int turn, int rowIn, int colIn)
+  bool makeMove(int turn, int rowIn, int colIn)//makes inputed box, x or o
   {
-    if(turn==0)
+    if(rowIn<0 || rowIn>2 || colIn<0 || colIn>2)
     {
-      board[rowIn][colIn] = 'X';
+      std::cout << "Invalid move, that is outside the board" << std::endl;
+      return false;
+    }
+    else if(board[rowIn][colIn] != ' ')
+    {
+      std::cout << "That space is taken!" << std::endl;
+      return false;
     }
     else
     {
-      board[rowIn][colIn] = 'O';
+      if(turn==0)
+      {
+        board[rowIn][colIn] = 'X';
+      }
+      else
+      {
+        board[rowIn][colIn] = 'O';
+      }
+      return true;
     }
-
   }
-
-
 };
 
 #endif

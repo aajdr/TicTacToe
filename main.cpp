@@ -8,6 +8,7 @@ int main()
   bool gameOver = false;
   int rowIn;
   int colIn;
+  bool turnOver = false;
 
   std::cout << "welcome to tic tac toe!" << std::endl;
 
@@ -22,16 +23,20 @@ int main()
     {
       std::cout << "It is player Two's turn!" <<std::endl;
     }
+    
+    while(turnOver == false)
+    {
+      //do the turn
+      std::cout << "Pick a Row: ";
+      std::cin >> rowIn;
+      std::cout << "Pick a Collumn: ";
+      std::cin >> colIn;
 
-    //do the turn
-    std::cout << "Pick a Row: ";
-    std::cin >> rowIn;
-    std::cout << "Pick a Collumn: ";
-    std::cin >> colIn;
+      turnOver = myGame.makeMove(turn,rowIn,colIn);
+    }
+      turnOver = false;
 
-    myGame.makeMove(turn,rowIn,colIn);
-
-    turn++;
-    turn %= 2;
+      turn++;
+      turn %= 2;
   }
 }
