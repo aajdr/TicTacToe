@@ -23,7 +23,7 @@ int main()
     {
       std::cout << "It is player Two's turn!" <<std::endl;
     }
-    
+
     while(turnOver == false)
     {
       //do the turn
@@ -36,7 +36,18 @@ int main()
     }
       turnOver = false;
 
+      gameOver = myGame.testForWin();
+
       turn++;
       turn %= 2;
-  }
+    }
+    myGame.printBoard();
+    if(turn == 1)
+    {
+      std::cout << "X's Win!!" << std::endl;
+    }
+    else
+    {
+    std::cout << "O's Win!!" << std::endl;
+    }
 }
