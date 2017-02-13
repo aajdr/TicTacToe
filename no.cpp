@@ -8,7 +8,7 @@ int main()
   {
     std::cout << "Type a number(-1 to end)" << std::endl;
     std::cin >> input;
-    if(input < 0)
+    if(input == -1)
     {
       done = true;
     }
