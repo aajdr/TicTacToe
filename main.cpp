@@ -29,7 +29,7 @@ int main()
       //do the turn
       std::cout << "Pick a Row: ";
       std::cin >> rowIn;
-      std::cout << "Pick a Collumn: ";
+      std::cout << "Pick a Column: ";
       std::cin >> colIn;
 
       turnOver = myGame.makeMove(turn,rowIn,colIn);
