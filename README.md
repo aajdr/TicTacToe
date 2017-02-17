@@ -5,3 +5,5 @@ g++ main.cpp -o TicTacToe <can change and will make a new file of same type
      can be any runnable file ex. no.cpp
 iMac-JJ:TicTacToe Image15$
 iMac-JJ:TicTacToe Image15$ ./TicTacToe
+brew install sfml
+g++ mainWindow.cpp -o HelloWorld -lsfml-window -lsfml-graphics -lsfml-system

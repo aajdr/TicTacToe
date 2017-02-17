@@ -99,6 +99,11 @@ public:
     }
     return false;
   }
+
+  char getSpace(int x,int y)
+  {
+    return board[x][y];
+  }
 };
 
 #endif
