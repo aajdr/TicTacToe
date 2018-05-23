@@ -1,6 +1,7 @@
 #include <iostream>
 #include "game.hpp"
 
+
 int main()
 {
   Game myGame;
@@ -9,6 +10,7 @@ int main()
   int rowIn;
   int colIn;
   bool turnOver = false;
+  int testturn = 0;
 
   std::cout << "welcome to tic tac toe!" << std::endl;
 
@@ -36,8 +38,9 @@ int main()
     }
       turnOver = false;
 
-      gameOver = myGame.testForWin();
-
+      gameOver = myGame.testForWin(testturn);
+    
+      testturn++;
       turn++;
       turn %= 2;
     }
@@ -46,8 +49,12 @@ int main()
     {
       std::cout << "X's Win!!" << std::endl;
     }
-    else
+    else if(turn == 0)
     {
     std::cout << "O's Win!!" << std::endl;
+    }
+    else
+    {
+      std::cout << "No body won, it's a tie!" << std::endl;
     }
 }
