@@ -69,7 +69,7 @@ public:
     }
   }
 
-  bool testForWin()
+  bool testForWin(turn)
   {
     //horizontals
     for(int i=0; i<3; i++)
@@ -94,6 +94,10 @@ public:
     }
     //diagonal left
     if(board[2][0] == board[1][1] && board[1][1] == board[0][2] && board[2][0] != ' ')
+    {
+      return true;
+    }
+    if(turn >= 9)
     {
       return true;
     }
