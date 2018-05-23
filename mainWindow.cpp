@@ -14,6 +14,7 @@ int main()
   Game myGame;
   int mouseX, mouseY, moveX, moveY;
   int turn = 0;
+  int testturn =0;
 
   sf::RenderWindow window(sf::VideoMode(WIDE, HIGH), "TicTacToe");
 
@@ -150,15 +151,19 @@ int main()
       }
     }
 
-    if(myGame.testForWin())
+    if(myGame.testForWin(testturn))
     {
       if(turn == 0)
       {
         text.setString("O Wins!");
       }
-      else
+      else if(turn == 1)
       {
         text.setString("X Wins!");
+      }
+      else
+      {
+        text.setString("Tie!");
       }
       window.draw(text);
     }
